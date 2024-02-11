@@ -1,0 +1,20 @@
+.container{
+    max-width: 140rem;
+    padding: 4.2rem 2.4rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+ul{
+    display: flex;
+    gap: 3.2rem;
+}
+
+.navlink {
+    font-size: 2.1rem;
+}
+.l{
+    font-size: 2.5rem;
+}
+

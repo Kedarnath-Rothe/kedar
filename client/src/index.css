@@ -1,0 +1,649 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Urbanist, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+}
+
+:root {
+  --bg-color: #f4f3ff;
+  --btn-color: #646cff;
+  --dark-color: #242424;
+  --helper-color: #99b9ff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* base style */
+
+body {
+  margin: 0;
+  /* display: flex;
+  place-items: center; */
+  /* min-width: 32rem; */
+  min-height: 100vh;
+}
+ 
+
+h1 {
+  font-size: 5.4rem;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+p,
+li,
+label,
+input,
+textarea {
+  font-size: 1.8rem;
+  line-height: 1.56;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.06rem;
+}
+
+a {
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: var(--btn-color);
+  text-decoration: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+/*? layout Rule  */
+
+.container {
+  max-width: 140rem;
+  padding: 4rem 2.4rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 6.4rem;
+}
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-four-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-three-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+/* Reusable */
+button { 
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid var(--btn-color);
+  color: var(--btn-color);
+  font-weight: 500;
+  font-size:medium;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer; 
+} 
+
+button:hover{
+    box-shadow: inset 0 0 0 0.2rem var(--bg-color);
+    /* border: 0.2rem solid #fff; */
+    background: var(--btn-color);
+  color: #fff;
+}
+
+a:hover,
+a:active {
+    color: #535bf2;
+}
+
+/***** Hero Section *****/
+
+.section-hero {
+  & .grid {
+    align-items: center;
+  }
+
+  .hero-content {
+    & p {
+      margin: 2.4rem 0 4.8rem 0;
+      &:first-child {
+        margin: 0 0 1.2rem 0;
+      }
+    }
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    & img {
+      width: 70%;
+      height: auto;
+    }
+  }
+}
+
+/***** End Hero  *****/
+
+/***** analytics Section *****/
+
+.section-analytics {
+  margin: 9.6rem 0;
+
+  & .container {
+    background-color: var(--bg-color);
+    border-radius: 1rem;
+  }
+
+  & .grid {
+    color: var(--dark-color);
+
+    & .div1 {
+      text-align: center;
+      border-right: 0.2rem solid var(--dark-color);
+
+      &:last-child {
+        border: none;
+      }
+      & h2 {
+        font-size: 4.8rem;
+      }
+      & p {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/* pseduo elements  */
+
+
+
+/* .main-heading {
+  position: relative;
+  text-transform: capitalize;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 0.5rem;
+    background-color: var(--btn-color);
+  }
+} */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover,
+  a.active {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* error page  */
+#error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#error-page .content {
+  max-width: 70rem;
+  text-align: center;
+}
+.content h2.header {
+  font-size: 18vw;
+  line-height: 1em;
+  animation: animate 10s ease-in-out infinite;
+  background: -webkit-repeating-linear-gradient(
+    -60deg,
+    #71b7e6,
+    var(--btn-color),
+    #b98acc,
+    #ee8176,
+    #b98acc,
+    var(--btn-color),
+    #9b59b6
+  );
+  background-size: 500%;
+  /* -webkit-background-clip: text; */
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+  position: relative;
+  -webkit-animation: animate 10s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+.content h4 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.content .btns {
+  margin: 25px 0;
+  display: inline-flex;
+  justify-content: center;
+}
+.content .btns a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid var(--btn-color);
+  color: var(--btn-color);
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.content .btns a:hover {
+  background: var(--btn-color);
+  color: #fff;
+}
+
+/** -----------------------
+** registration section css
+** -------------------------  */
+
+.section-registration {
+  padding: 0 3.2rem;
+
+  & .container {
+    /* background-color: #fff; */
+    padding-top: 3.2rem;
+    align-items: center;
+
+    & img {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  & .registration-form {
+    & label {
+      display: block;
+      margin: 2.4rem 0 0.8rem 0;
+      text-transform: capitalize;
+    }
+    & input {
+      width: 80%;
+      padding: 0.6rem 0.6rem;
+    }
+
+    & button {
+      margin-top: 3.2rem;
+    }
+  }
+}
+
+.adminNav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.adminContainer {
+  display: grid;
+  padding-top: 0;
+  grid-template-columns: 1fr 3fr;
+}
+
+.adminList {
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.adminList li {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+
+/** -----------------------
+** contact section css
+** -------------------------  */
+
+.section-contact {
+    & .contact-content {
+        padding: 0;
+
+        & h1 {
+            margin-bottom: 3.2rem;
+        }
+    }
+
+    .container {
+        padding-top: 3.2rem;
+    }
+
+    & .contact-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            width: 80%;
+            height: auto;
+        }
+    } 
+
+    & .section-form {
+        & form {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+        }
+
+        & label {
+            display: block;
+            margin-bottom: 1.2rem;
+            text-transform: capitalize;
+        }
+
+        & input,
+        textarea {
+            width: 80%;
+            padding: 0.4rem 0.6rem;
+        }
+    }
+}
+
+.map{
+    margin: 1rem;
+    margin-left: 20rem;
+    padding: 1rem;
+}
+
+
+
+/** -----------------------
+**  toastBody
+** -------------------------  */
+
+.toastBody {
+  font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+  color: #fbfbfb; /* #10171D */
+  font-size: 1.8rem;
+}
+
+
+/** -----------------------
+** services section css
+** -------------------------  */
+
+.section-services {
+  & .container:first-child {
+    padding: 0;
+  }
+  & .grid-three-cols {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2rem;
+  }
+
+  & .card {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    border: 0.2rem solid var(--helper-color);
+
+    & .card-img {
+      text-align: center;
+      & img {
+        width: 70%;
+        height: auto;
+        filter: drop-shadow(0 0 2rem 2rem #fff);
+        -webkit-filter: drop-shadow(0 0 2rem 2rem #fff);
+      }
+    }
+
+    & .card-details {
+      padding: 0 15.4rem;
+
+      &  p {
+        font-size: 2rem;
+      }
+
+      & h2 {
+        font-size: 3.2rem;
+        /* margin: 1.2rem 0 2.4rem 0; */
+        margin-top: -5rem;
+      }
+    }
+  }
+}
+
+
+/** -----------------------
+** Admin
+** -------------------------  */
+
+table {
+  width: 120%; /* Increase the width as needed */
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 20px; /* Increase the font size */
+  border-radius: 10px; /* Add border-radius to make it rounded */
+  overflow: hidden;
+}
+
+th, td {
+  padding: 20px; /* Increase the padding */
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Add border only at the bottom to separate rows */
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr {
+  background-color: #294cdb;
+  border-radius: 10px; /* Add border-radius to make it rounded */
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: #3d4eb1;
+}
+
+.action-column button {
+  padding: 12px; /* Increase the padding */
+  margin: 8px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.action-column button:hover {
+  background-color: #2980b9;
+}
+
+.edit button,
+.delete button {
+  /* padding: 12px; Adjust padding as needed */
+  margin: 4px;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;  
+}
+
+.edit button { 
+  border: 2.5px solid rgb(255, 255, 255);
+  color: white;
+}
+
+.edit2{
+  color: white;
+}
+
+.edit button:hover {
+  background-color: #45a049;
+}
+
+.delete button {
+  border: 2.5px solid rgb(255, 255, 255);
+  color: white;
+}
+
+.delete button:hover {
+  background-color: #d32f2f;
+}
+
+/** -----------------------
+** Admin Contacts
+** -------------------------  */
+
+/* Responsive layout for AdminContacts component */
+.admin-contacts-section {
+  padding: 20px;
+}
+
+.container.admin-users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.container.admin-users > div {
+  flex: 1;
+  min-width: 300px;
+  background-color: #320a65;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.container.admin-users > div p {
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Allow long words to be broken and wrap to the next line */
+}
+
+/* Set a maximum height for the message and allow it to overflow with a scrollbar */
+.container.admin-users > div .message {
+  max-height: 150px; /* Set your preferred maximum height */
+  overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .container.admin-users > div {
+    min-width: 100%;
+  }
+}
+
+
+/** -----------------------
+** admin pannel
+** -------------------------  */
+
+.admin_pannel{
+
+  max-width: 60rem;
+
+}
+
+.h2{
+  font-size: 3rem;
+}
+
+.admin_image{
+  border-radius: 10000px;
+}
+
+.hh{
+  font-size: 2rem;
+}
+
+
+/** -----------------------
+** media query section css
+** -------------------------  */
+
+@media (width <= 998px) {
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .section-services {
+    & .grid-three-cols {
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    }
+  }
+
+  .section-registration {
+    & .container {
+      & .reg-img img {
+        width: 60%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (width <= 798px) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .section-registration {
+    & .container {
+      & .reg-img img {
+        width: 50%;
+        height: auto;
+      }
+    }
+
+    & .registration-form {
+      & input {
+        width: 100%;
+        padding: 0.6rem 0.6rem;
+      }
+    }
+  }
+}
