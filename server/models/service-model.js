@@ -1,4 +1,4 @@
-const {Schema, model, Mongoose} = require('mongoose');
+const {Schema, model, Mongoose} = require('mongoose');             // Directely imported 
 
 const serviceSchema = new Schema({
     carname : {
