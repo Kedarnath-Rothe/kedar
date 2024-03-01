@@ -13,8 +13,8 @@ const mongoose = require('mongoose');
 
 const connectDB = async() => {
     try{ 
-        await mongoose.connect(process.env.MONGODB_URI);
-        // await mongoose.connect('mongodb://127.0.0.1:27017/okk');
+        await mongoose.connect(process.env.MONGODB_URI);                       //MongoDB atlas from env file
+        // await mongoose.connect('mongodb://127.0.0.1:27017/okk');            //MongoDB Atlas
         console.log("Connection successful to DB");
     }
     catch(error){
