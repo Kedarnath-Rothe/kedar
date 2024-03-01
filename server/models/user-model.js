@@ -31,7 +31,7 @@ const userSchema = mongoose.Schema ( {
         default : false
     },
 
-    image : {
+    image : {                         //Image type is string because it stores the adress of images
         type : String,
         required : true
     },
