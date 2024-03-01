@@ -42,7 +42,7 @@ const userSchema = mongoose.Schema ( {
 
 
 //json web token  JWT
-userSchema.methods.generateToken = function () {
+userSchema.methods.generateToken = function () {                  //To generate token
     try{
         return jwt.sign({
             userId : this._id.toString(),
