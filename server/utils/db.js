@@ -14,7 +14,7 @@ const mongoose = require('mongoose');
 const connectDB = async() => {
     try{ 
         await mongoose.connect(process.env.MONGODB_URI);                       //MongoDB atlas from env file
-        // await mongoose.connect('mongodb://127.0.0.1:27017/okk');            //MongoDB Atlas
+        // await mongoose.connect('mongodb://127.0.0.1:27017/okk');            //MongoDB Compass
         console.log("Connection successful to DB");
     }
     catch(error){
